@@ -7,6 +7,7 @@ import MostlyCloudy from "./img/weather-icons/mostlycloudy.svg";
 import Clear from "./img/weather-icons/clear.svg";
 import Card from "./components/Card";
 import "./App.css";
+import FakeWeather from "./data/FakeWeather.json"
 
 class App extends Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class App extends Component {
         <Search />
         <div className="all">
           <WeatherItem />
-          <Card />
+          <Card data={FakeWeather.list} />
         </div>
       </div>
     );
