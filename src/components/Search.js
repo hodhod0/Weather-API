@@ -6,7 +6,10 @@ class Search extends React.Component {
   state = {
     input: ""
   };
-
+constructor(props){
+  super(props);
+  console.log(props);
+}
   render() {
     return (
       <div>
@@ -15,9 +18,12 @@ class Search extends React.Component {
             <input
               type="text"
               className="search"
-              placeholder="Type in a city name"
-            ></input>
-            <button type="button" className="myButton">
+              placeholder="Type in a city name"  onChange={event => {
+                this.setState({ input: event.target.value });
+              }}/>
+            <button type="button" className="myButton" onClick={event => {
+            this.props.handleInputChange(this.state.input);
+          }}>
               FIND WEATHER
             </button>
           </div>
