@@ -12,13 +12,13 @@ export default function Card(props) {
         const id = x.weather[0].id;
         const weatherMain = x.weather[0].main;
         const img = weatherMain === "Clouds" ? MostlyCloudy : Clear;
-
+console.log(x.main);
         if (i <= 6) {
           return (
             <div key={i}>
               <p>{x.dt_txt.split(" ")[1].slice(0, 5)}</p>
               <img src={img} alt="sun" width="75" height="75" />
-              <p>{x.main.temp_kf} &#176;C</p>
+              <p>{Math.floor(x.main.temp - 273.15)} &#176;C</p>
             </div>
           );
         }
